@@ -116,6 +116,13 @@ tbody td:first-child{font-weight:800;color:var(--ink);text-align:left}
 td .goal{color:var(--red);font-weight:800}
 td small{display:block;font-size:14.5px;color:var(--gray);font-weight:600;margin-top:3px}
 .note{font-size:17px;color:var(--gray);text-align:center;margin-top:16px;line-height:1.5}
+/* summary matrix (mtx) */
+.mtx{max-width:1180px}
+.mtx th,.mtx td{padding:14px 15px;font-size:18.5px;line-height:1.36;text-align:center;vertical-align:middle}
+.mtx thead th{background:var(--thead);font-weight:800;color:var(--ink);line-height:1.28}
+.mtx thead th small{display:block;font-size:13px;color:var(--gray);font-weight:600;margin-top:4px;letter-spacing:0}
+.mtx tbody td:first-child{color:var(--charcoal);font-weight:800;text-align:center}
+.mtx tbody td b{color:var(--red);font-weight:800}
 /* chevron */
 .chev{display:flex;margin:0 auto 44px;max-width:1160px}
 .chev .c{flex:1;color:#fff;font-weight:800;font-size:22px;padding:24px 8px 24px 32px;display:flex;align-items:center;justify-content:center;position:relative;
@@ -339,7 +346,67 @@ td small{display:block;font-size:14.5px;color:var(--gray);font-weight:600;margin
   </div>
 </section>
 
-<!-- 9 · 겸손 클로징 + 역질문 -->
+<!-- 9 · 요약 매트릭스 (문제→진단→지표→90일) -->
+<section class="slide">
+  <div class="hd"><span class="sec">요약 · 한 장</span><span class="pg"></span></div>
+  <div class="tw">
+    <div class="eyebrow">밖에서 본 가설 · 입사 후 데이터로 검증 · 한 장 요약</div>
+    <div class="headline sm">문제 → 진단 → 지표 → 90일, <span class="red">한 장으로</span></div>
+  </div>
+  <div class="body" style="margin-top:30px">
+    <table class="mtx">
+      <thead>
+        <tr>
+          <th style="width:14%">문제 원인</th>
+          <th style="width:24%">정산 문제<small>무엇이 어긋나나</small></th>
+          <th style="width:23%">진단 방법<small>어떻게 확인</small></th>
+          <th style="width:15%">신호 지표</th>
+          <th style="width:24%">90일 조치</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>매입·위탁 혼재</td>
+          <td>소유·정산 주체가 섞여 정산 로직이 갈림</td>
+          <td>주문라인별 매입/위탁 태그 점검</td>
+          <td><b>수기정산 건수</b></td>
+          <td>어드민 입력규칙·정산 정책 표준화</td>
+        </tr>
+        <tr>
+          <td>배송비 귀책</td>
+          <td>배송비 부담 주체 불명확 → 정산액 오차</td>
+          <td>정산 계산식에서 배송비 항목 대사</td>
+          <td><b>정산 정정 소요시간</b></td>
+          <td>배송비 귀책 규칙 문서화</td>
+        </tr>
+        <tr>
+          <td>부분취소 역산</td>
+          <td>부분취소 역산이 어긋나 정산·클레임 불일치</td>
+          <td>주문라인 부분취소 역산 검증</td>
+          <td><b>클레임-정산 불일치율</b></td>
+          <td>불일치 자동 탐지 룰 도입</td>
+        </tr>
+        <tr>
+          <td>할인 파트너부담</td>
+          <td>할인의 파트너 부담분이 정산에 미반영</td>
+          <td>정산식·사유코드 분포로 대사</td>
+          <td><b>파트너 정산문의</b></td>
+          <td>사유코드 표준화·월 리포트 자동화</td>
+        </tr>
+        <tr>
+          <td>속성 미구조화</td>
+          <td>소비기한·상태 속성 미구조화로 예외 반복</td>
+          <td>상품등록 단계 속성 구조 점검</td>
+          <td><b>수기정산·예외 반복</b></td>
+          <td>표준 속성 설계·어드민 입력규칙</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">※ 지표·목표는 <b>방향(↓)</b>만 — baseline·구체 매핑은 입사 후 데이터로 확정합니다. 밖에서 본 가설입니다.</div>
+  </div>
+</section>
+
+<!-- 10 · 겸손 클로징 + 역질문 -->
 <section class="slide">
   <div class="hd"><span class="sec">클로징 · 역질문</span><span class="pg"></span></div>
   <div class="tw">
